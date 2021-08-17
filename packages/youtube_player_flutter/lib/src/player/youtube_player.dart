@@ -420,17 +420,5 @@ class _YoutubePlayerState extends State<YoutubePlayer> {
         fit: BoxFit.cover,
         loadingBuilder: (_, child, progress) =>
             progress == null ? child : Container(color: Colors.black),
-        errorBuilder: (context, _, __) => Image.network(
-          YoutubePlayer.getThumbnail(
-            videoId: controller.metadata.videoId.isEmpty
-                ? controller.initialVideoId
-                : controller.metadata.videoId,
-            webp: false,
-          ),
-          fit: BoxFit.cover,
-          loadingBuilder: (_, child, progress) =>
-              progress == null ? child : Container(color: Colors.black),
-          errorBuilder: (context, _, __) => Container(),
-        ),
       );
 }
