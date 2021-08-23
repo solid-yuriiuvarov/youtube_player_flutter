@@ -16,14 +16,10 @@ class LiveBottomBar extends StatefulWidget {
   /// Defines color for UI.
   final Color liveUIColor;
 
-  /// Defines whether to show or hide the fullscreen button
-  final bool showLiveFullscreenButton;
-
   /// Creates [LiveBottomBar] widget.
   LiveBottomBar({
     this.controller,
     @required this.liveUIColor,
-    @required this.showLiveFullscreenButton,
   });
 
   @override
@@ -114,9 +110,9 @@ class _LiveBottomBarState extends State<LiveBottomBar> {
               ),
             ),
           ),
-          widget.showLiveFullscreenButton
-              ? FullScreenButton(controller: _controller)
-              : const SizedBox(width: 14.0),
+          FullScreenButton(
+            controller: _controller,
+          ),
         ],
       ),
     );

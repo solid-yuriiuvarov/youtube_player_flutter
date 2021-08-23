@@ -67,11 +67,6 @@ class YoutubePlayerFlags {
   /// Specifies the default end point of the video in seconds
   final int endAt;
 
-  /// Defines whether to show or hide the fullscreen button in the live player.
-  ///
-  /// Default is true.
-  final bool showLiveFullscreenButton;
-
   /// Creates [YoutubePlayerFlags].
   const YoutubePlayerFlags({
     this.hideControls = false,
@@ -87,7 +82,6 @@ class YoutubePlayerFlags {
     this.forceHD = false,
     this.startAt = 0,
     this.endAt,
-    this.showLiveFullscreenButton = true,
   });
 
   /// Copies new values assigned to the [YoutubePlayerFlags].
@@ -105,7 +99,6 @@ class YoutubePlayerFlags {
     String captionLanguage,
     int startAt,
     int endAt,
-    bool showLiveFullscreenButton,
   }) {
     return YoutubePlayerFlags(
       autoPlay: autoPlay ?? this.autoPlay,
@@ -120,8 +113,6 @@ class YoutubePlayerFlags {
       forceHD: forceHD ?? this.forceHD,
       startAt: startAt ?? this.startAt,
       endAt: endAt ?? this.endAt,
-      showLiveFullscreenButton:
-          showLiveFullscreenButton ?? this.showLiveFullscreenButton,
     );
   }
 }
